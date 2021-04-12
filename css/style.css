@@ -102,13 +102,14 @@ body {
   .menu {
     background-image: url("../img/mobile/image-hero.jpg");
     padding: 0;
+    position: relative;
   }
 
   .intro {
     border: 2px solid var(--normalWhite);
     max-width: 100%;
     padding: 32px;
-    margin: 64px 16px 64px 16px;
+    margin: 128px 16px 64px 16px;
   }
 
   .intro h1 {
@@ -121,40 +122,65 @@ body {
   .nav-menu {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    align-content: flex-start;
+    align-items: center;
+    align-content: center;
     padding: 32px 0;
-    position: relative;
-    
   }
 
   .logo {
     margin-left: 0;
     width: 150px;
+    z-index: auto;
   }
 
+  /* ANIMAÇÃO */
+
+  .animaDiv {
+    animation: anima-div 0.5s;
+  }
+
+  @keyframes anima-div {
+    from {
+      transform: translateY(-1000px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /**/
+
   .nav-menu ul {
-    margin-top: 32px;
+    display: none;
+    margin-top: 40px;
     align-items: flex-end;
     flex-direction: column;
     justify-content: baseline;
+    position: absolute;
+    right: 0;
+    top: 32px;
   }
   .nav-menu ul li {
     margin-bottom: 8px;
   }
 
+  /* MENU-HAMBURGUER */
+
   #inptMenu {
     visibility: hidden;
+    position: absolute;
+    left: 84%;
+    transform: rotate(0);
   }
 
   #inptMenu::after {
     content: url("../img/icon-hamburger.svg");
     display: block;
-    position: absolute;
-    left: 303px;
     visibility: visible;
-    background: #fff;
+    z-index: auto;
   }
+
+  /**/
 
   .nav-menu ul li a {
     text-align: right;
